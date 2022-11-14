@@ -1,0 +1,105 @@
+
+### obter por Orcamentos
+POST HTTP://localhost:3000/orcamentos
+Content-Type: application/json
+Authorization: 43e0973ea5f19c91783dd79720886c28
+
+{
+  "id": "3",
+  "descricao": "Orcamento teste A",
+  "cliente": {
+    "id": "1",
+    "nome": "Maximo Terra",
+    "cpfOuCnpj": "39616365299",
+    "telefone": "11923782096",
+    "enderecos": []
+  },
+  "itens": [
+    {
+      "id": "2",
+      "servico": {
+        "id": "2",
+        "descricao": null,
+        "observacao": null,
+        "valor": 0
+      },
+      "prestador": {
+        "id": "2",
+        "nome": "Marcelo",
+        "email": "marcelo@terra.com.br",
+        "telefone": "11-9872-8931",
+        "observacao": "Funilaria",
+        "criadoEm": "2022-11-02T20:05:51.811Z"
+      },
+      "desconto": 100,
+      "acrescimo": 1000,
+      "valor": 1000,
+      "valorTotal": 0,
+      "observacao": null,
+      "criadoEm": "2022-11-02T20:02:57.192Z"
+    }
+  ],
+  "desconto": 0,
+  "acrescimo": 0,
+  "valorTotal": 0,
+  "criadoEm": "2022-10-14T00:52:36.125Z",
+  "atualizadoEm": "2022-10-14T00:52:36.125Z"
+}
+
+
+### CHAMAR O orcamentos
+GET HTTP://localhost:3000/orcamentos
+Authorization: 2cf992a22abc45cd7c8456a538a679d4
+
+### CHAMAR O orcamentos
+GET HTTP://localhost:3000/orcamentos/3
+Authorization: 2cf992a22abc45cd7c8456a538a679d4
+
+
+### ATUALIZAR O orcamentos
+PUT HTTP://localhost:3000/orcamentos/3
+Content-Type: application/json
+Authorization: 2cf992a22abc45cd7c8456a538a679d4
+
+{
+  "id": "3",
+  "descricao": "Orcamento teste A",
+  "cliente": {
+    "id": "1",
+    "nome": "Maximo Terra",
+    "cpfOuCnpj": "39616365299",
+    "telefone": "11923782096",
+    "enderecos": []
+  },
+  "itens": [
+    {
+      "id": "3",
+      "servico": {
+        "id": "2",
+        "descricao": null,
+        "observacao": null,
+        "valor": 0
+      },
+      "prestador": {
+        "id": "2",
+        "nome": "Marcelo",
+        "email": "marcelo@terra.com.br",
+        "telefone": "11-9872-8931",
+        "observacao": "Pedreiro",
+        "criadoEm": "2022-11-02T20:05:51.811Z"
+      },
+      "desconto": 100,
+      "acrescimo": 1300,
+      "valor": 0,
+      "valorTotal": 1900,
+      "observacao": null,
+      "criadoEm": "2022-11-02T20:02:57.192Z"
+    }
+  ],
+  "desconto": 0,
+  "acrescimo": 0,
+  "valorTotal": 0,
+  "criadoEm": "2022-10-14T00:52:36.125Z",
+  "atualizadoEm": "2022-11-02T21:13:40.651Z"
+}
+

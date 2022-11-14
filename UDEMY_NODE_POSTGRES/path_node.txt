@@ -1,0 +1,173 @@
+npm init 
+npm i express - modulos express
+npm i dotenv - trabalha com ambiente variavel
+npm i cors - para trabalha com requisição
+npm i nodemon
+
+########
+1 PASSO
+trabalhar com postgres
+npm i sequelize sequelize-cli / criar o banco, gerencia tudo, pode instalar duas aplicação colocando separado
+npm i pg pg-hstore - biblioteca postgres node
+npm i yarn - escrever no arquivo package.json - 
+{
+    "criar-banco": "yarn sequelize db:create",
+    "criar-migration": "yarn sequelize migration:create --name=criar-tabela",
+    "executar-migration": "yarn sequelize db:migrate",
+    "desfazer-migration": "yarn sequelize db:migrate:undo"
+}
+
+2 PASSO
+criar as contantes no .env 
+# BANCO DE DADOS
+DIALECT=postgres
+HOST=localhost 
+USER_NAME=postgres
+PASSWORD=postgres
+DATABASE=gestao_service
+PORT=5432
+
+3 PASSO
+Criar configuração de sequelize na pasta config
+
+4 PASSO 
+CRIAR O ARQUIVO .squelizerc na raiz do projeto
+
+
+##########################################
+
+
+
+##########################################
+CRIAR UM ARQUIVO NO CONFIG 
+CHAMAR DE DATABASE.json
+
+/* ARQUIVO DE PUBLICAÇÃO */
+let ambiente = undefined;
+
+switch(process.env.PUBLICAR) {
+    case 'HML':
+        ambiente = configurar_hml();
+        break;
+    case 'PROD':
+        ambiente = configurar_produ();
+        break;
+    default:
+        ambiente = configurar_local();
+       
+}
+
+function configurar_hml(){
+
+    return {
+        dialect:process.env.HML_DIALECT,
+        host:process.env.HML_HOST,
+        port:process.env.HML_PORT,
+        username:process.env.HML_USER_NAME,
+        password:process.env.HML_PASSWORD,
+        database:process.env.HML_DATABASE,
+        define:{
+            timestamps: true,
+            underscored: true,
+        }
+    }
+}
+
+function configurar_produ(){
+    return {
+        dialect:process.env.PROD_DIALECT,
+        host:process.env.PROD_HOST,
+        port:process.env.PROD_PORT,
+        username:process.env.PROD_USER_NAME,
+        password:process.env.PROD_PASSWORD,
+        database:process.env.PROD_DATABASE,
+        define:{
+            timestamps: true,
+            underscored: true,
+        }
+    }
+}
+
+function configurar_local(){
+
+    return {
+        dialect:process.env.LOCAL_DIALECT,
+        host:process.env.LOCAL_HOST,
+        port:process.env.LOCAL_PORT,
+        username:process.env.LOCAL_USER_NAME,
+        password:process.env.LOCAL_PASSWORD,
+        database:process.env.LOCAL_DATABASE,
+        define:{
+            timestamps: true,
+            underscored: true,
+        }
+    }   
+
+}
+
+module.exports = ambiente
+
+4 Criar o arquivo .sequelize na raiz do projeto
+
+
+CRIAR O BANCO 
+npm run criar-banco
+npm run criar-migration
+npm run executar-migration - criar a tabela
+npm run desfazer-migration - ira desfazer a tabela criada
+
+
+services
+
+controlar todas requição de toda api do sistema
+
+Gerar o token
+npm i md5
+
+
+pasta dto - serve para transferencia de dados para o front end
+
+==============
+Criar uma entidade:
+
+1 - Criar as migration
+2 - Criar o model
+3 - Criar um dto
+4 - Criar o serviço
+5 - Criar o Controle
+6 - criar as rotas no routes.js
+
+7 RODAR A migration
+8 CRIAR ARQUIVO HTTP
+
+#################################################
+
+
+consulta ao banco
+obter capa
+obter intens vinculados ao orcamento
+para cada OrcamentoItem : prestador, servico.
+obter cliente
+
+
+objetos simples
+persistencia:sequelize
+consulta: sequelize
+
+Objetos complexos:
+persistencia: sequelize
+consultas: cqrs - consulta direta ao banco de dado, query.
+
+CQRS: DDD arquitetura escalaveis.
+CQRS: Command Query Responsabilty Segregation.
+
+
+#############################################
+
+Seeders
+
+1 criar uma pasta onde ficara o Seeder OK
+2 configurar o sequelize para encontrar esses caras 
+3 criar os crips que sabem criar e executar o seeder 
+4 testar e vê se esta funcionando corretamente.
+

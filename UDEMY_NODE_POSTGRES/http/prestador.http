@@ -1,0 +1,29 @@
+
+### obter por Id
+POST HTTP://localhost:3000/prestadores
+Content-Type: application/json
+Authorization: 175de72499d84ead8ba7fd8e8c8c9264
+
+{   
+    "nome":"Manuael",
+    "email": "manuel@gmail.com",
+    "telefone": "11-99354-5643",
+    "cpfouCnpj": "39516598745",
+    "observacao": "Utilidade pintura"
+}
+
+
+### CHAMAR O CLIENTE
+GET HTTP://localhost:3000/prestadores/1
+Authorization: d9143cb8d07637ea19e718efd5895dfd
+
+### ATUALIZAR O CLIENTE
+PUT HTTP://localhost:3000/prestadores/6
+Content-Type: application/json
+Authorization: d538053fa6e443734f71369be6143183
+
+{   
+    "descricao": "Pintura Interior m2",
+    "valor": 100.0
+}
+

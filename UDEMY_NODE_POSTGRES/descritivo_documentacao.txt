@@ -1,0 +1,21 @@
+1 Documenta todo o projeto
+- todos os controllers
+- todos os Servicos
+- todos os CQRS
+- Todos os metodos que forem importantes e estejam isolados
+
+2 Criar todo o fluxo de status
+- Criar o seed de status (Pendente, aguardando, aprovado, reprovado, cancelado)
+- Criar um endpoint para obter a lista de status (Esse cara pode estar dentro do controller de orcamentos)
+- Alterar o orcamentos para trabalhar com o IdStatus e o OrcamentoDTO para trabalhar com o StatusDTO
+- Alterar o CQRS para trabalhar com status.
+- Alterar os metodos do service de orcamento para trabalhar com status.
+- Criar um endpoint onde só altere o status do orcamento.
+
+3 Implementar a rotina de dashboard
+
+- Criar um endpoint para obter os atendimentos por period (inicial e final)
+- Criar um endpoint que retorne todos Orcamento por id do usuario.
+- Criar um endpoint que retorne os orcamentopor id status.
+
+4 Versionar o projeto no seu Github , criar o video.

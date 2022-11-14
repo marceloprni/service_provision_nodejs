@@ -1,0 +1,44 @@
+
+### login
+POST HTTP://localhost:3000/login
+Content-Type: application/json
+
+{
+    "email": "administrador@gmail.com",
+    "senha": "123456"
+}
+### logout
+DELETE  HTTP://localhost:3000/logout
+Authorization: c40d24b3f99fba508cc5bf694e11123f
+
+
+### obter id
+GET HTTP://localhost:3000/usuarios/1
+Authorization: 32facd17c200fc74d45c5939e1b68f59
+
+
+### CADASTRAR
+POST HTTP://localhost:3000/usuarios
+Content-Type: application/json
+Authorization: 31dce0e8f565836f1515ef6c4ffd129b
+
+{
+    "nome":"Joao",
+    "email":"joao@gmail.com",
+    "senha":"123456",
+    "idPerfil":2
+}
+
+### ATUALIZAR
+PUT HTTP://localhost:3000/usuarios/6
+Content-Type: application/json
+Authorization: c22f5b0fe7159b3d0f1ca6a300c95a42
+
+{
+    "nome":"Joao Pires",
+    "email":"joaopires@gmail.com",
+    "senha":"123456",
+    "idPerfil":"2",
+    "criadoEm": "2022-07-14T01:05:11.719Z",
+    "atualizadoEm": "2022-07-14T01:05:11.719Z"
+}

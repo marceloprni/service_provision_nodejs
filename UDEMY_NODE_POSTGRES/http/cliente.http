@@ -1,0 +1,78 @@
+
+### obter por Id
+POST HTTP://localhost:3000/clientes
+Content-Type: application/json
+Authorization: bd6516a5cd1b560e89e3e0e8a40fa5cf
+
+{   
+    "nome": "Maximo Terra",
+    "email": "maximo@gmail.com",
+    "cpfOuCnpj": "39616365299",
+    "telefone": "11923782096",
+    "enderecos": [{
+        "cep":"0937122",
+        "rua":"rua terra",
+        "numero":"63",
+        "complemento": "Apartamento 21",
+        "bairro": "Europa",
+        "cidade": "São Paulo",
+        "uf": "SP"
+    },{
+        "cep":"0352131",
+        "rua":"rua monge",
+        "numero":"543",
+        "complemento": "Casa 2",
+        "bairro": "Paranavai",
+        "cidade": "Rio grande do sul",
+        "uf": "RS"
+    }]
+}
+
+
+### CHAMAR O CLIENTE
+GET HTTP://localhost:3000/clientes/6
+Authorization: 11944d84268ae2311b706b20d6fc5b0a
+
+### ATUALIZAR O CLIENTE
+PUT HTTP://localhost:3000/clientes/6
+Content-Type: application/json
+Authorization: d538053fa6e443734f71369be6143183
+
+{
+  "nome": "Fulano de Tal de Souza",
+  "email": "fulano@gmail.com",
+  "cpfOuCnpj": "39516665896",
+  "telefone": "11993787096",
+  "enderecos": [
+    {
+      "id": "2",
+      "cep": "0937131",
+      "rua": "rua nova 2",
+      "numero": "53",
+      "complemento": "casa 2 - fundos",
+      "bairro": "lugar nenhum",
+      "cidade": "Imaginaria",
+      "uf": "RJ",
+      "criadoEm": "2022-08-11T00:25:14.503Z",
+      "atualizadoEm": "2022-08-11T00:25:14.503Z"
+    },
+    {
+      "id": "3",
+      "cep": "0356131",
+      "rua": "rua nova",
+      "numero": "321",
+      "complemento": "APT 200 - fundos",
+      "bairro": "Santa Catariana",
+      "cidade": "Santa Catarina",
+      "uf": "SC",
+      "criadoEm": "2022-08-11T00:25:14.507Z",
+      "atualizadoEm": "2022-08-11T00:25:14.507Z"
+    }
+  ],
+  "criadoEm": "2022-08-11T00:25:14.433Z",
+  "atualizadoEm": "2022-08-11T00:25:14.433Z"
+}
+
+### CHAMAR TODOS OS CLIENTES
+GET HTTP://localhost:3000/clientes
+Authorization: 

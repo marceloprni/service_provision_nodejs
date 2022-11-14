@@ -1,0 +1,26 @@
+
+### obter por Id
+POST HTTP://localhost:3000/servicos
+Content-Type: application/json
+Authorization: 65be5d75cc4d4d2a81c7704b0614a38c
+
+{   
+    "descricao": "Pintura Interior m2",
+    "valor": 100.0
+}
+
+
+### CHAMAR O CLIENTE
+GET HTTP://localhost:3000/servicos/6
+Authorization: 11944d84268ae2311b706b20d6fc5b0a
+
+### ATUALIZAR O CLIENTE
+PUT HTTP://localhost:3000/servicos/6
+Content-Type: application/json
+Authorization: d538053fa6e443734f71369be6143183
+
+{   
+    "descricao": "Pintura Interior m2",
+    "valor": 100.0
+}
+
